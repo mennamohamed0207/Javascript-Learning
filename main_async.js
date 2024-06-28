@@ -23,3 +23,50 @@ clearInterval(id2)
 
 //any function that passed as an argument to another function is called callback function
 //and the function which accept the function as an argument is called a higher order function
+
+
+//Promises
+//---->Pending
+//---->Fulfilled
+//---->Rejected
+//how to create a promise
+const promise=new Promise((resolve,reject)=>{
+    //code
+    //we can use either resolve or reject
+    resolve()
+});
+const promise2=new Promise((resolve,reject)=>{
+    //code
+    //we can use either resolve or reject
+    reject()
+});
+const onFullfilled=(result)=>{
+    console.log(result)
+    console.log("fulfilled")
+}
+const onRejected=(error)=>{
+    console.log(error)
+    console.log("rejected")
+}
+promise.then(onFullfilled)
+promise2.catch(onRejected)
+//can be 
+// promise.then(onFullfilled,onRejected);
+
+//can be 
+// promise.then(onFullfilled);
+// promise.catch(onRejected);
+
+//can be 
+// promise.then(onFullfilled).catch(onRejected)
+//promises can be chained
+
+//promise.all([promise1,promise2,promise3])
+//will be rejected if one of them is rejected
+
+//promise.allSettled([promise1,promise2,promise3])
+//will be fulfilled if all of them are fulfilled
+//will wait until all of them are rejected or fulfilled
+
+//promise.race([promise1,promise2,promise3])
+//will be fulfilled if one of them is fulfilled
