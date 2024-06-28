@@ -70,3 +70,20 @@ promise2.catch(onRejected)
 
 //promise.race([promise1,promise2,promise3])
 //will be fulfilled if one of them is fulfilled
+//------------------------------------------------async and await-----------------------------------------
+async function greet()
+{
+    console.log("hello");
+}
+greet()   //it will print promise<fulfilled>hello
+async  function greet()
+{
+    return Promise.resolve("hello");
+}
+greet().then((val)=>{
+    console.log(val) //it will print hello
+})
+
+
+//Await:can not be used without async keyword
+//it will wait until the promise is fulfilled
